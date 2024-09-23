@@ -1,5 +1,3 @@
-from operator import truediv
-
 my_dict = {'Olya' : 2001, 'Vitaly' : 2000, 'Polina' : 1962, 'Sveta' : 1999}
 print(my_dict)
 print(my_dict['Olya'])
