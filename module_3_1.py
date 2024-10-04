@@ -12,7 +12,6 @@ def is_contains(string, list_to_search):
     string = string.lower()
     #list_to_search = [i.lower() for i in list_to_search]
     list_to_search = list(map(str.lower, list_to_search))
-    print(list_to_search)
     if string in list_to_search:
         return True
     else:
