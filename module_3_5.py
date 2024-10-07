@@ -7,5 +7,7 @@ def get_multiplied_digits(number):
     else:
         return first
 
-result = get_multiplied_digits(402030)
-print(result)
+result1 = get_multiplied_digits(402030)
+print(result1)
+result2 = get_multiplied_digits(40203)
+print(result2)
