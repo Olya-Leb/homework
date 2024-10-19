@@ -1,9 +1,8 @@
 import random
 
 def def_cipher():
-    num = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    new_num = list(range(3, 21))
-    cipher = random.choice(new_num)
+    num = list(range(3, 21))
+    cipher = random.choice(num)
     return cipher
 
 def def_passcode(n):
@@ -19,7 +18,7 @@ def def_passcode(n):
 
 n = def_cipher()
 # n = int(input('Введите шифр: '))
-print(f'Шифр: {n}')
+print(f'Число из первого поля: {n}')
 
 pair1 = list(range(1, n))
 pair2 = list(range(1, n))
@@ -38,8 +37,8 @@ for i in pair1:
                 pairs.append([p1, p2])
                 result = result + str(p1) + str(p2)
 print('Пары чисел', *pairs)
-print(f'Пароль для второго поля: {result}')
+print(f'Число для второго поля: {result}')
 if int(result) == def_passcode(n):
-    print('Сверка показала, что пароль подобран верно.')
+    print('Пароль подобран верно.')
 else:
-    print('Сверка показала, что пароль подобран неверно.')
+    print('Пароль подобран неверно.')
