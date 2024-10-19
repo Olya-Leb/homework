@@ -1,19 +1,44 @@
-def get_multiplied_digits(number):
-    number = int(number)
-    str_number = str(number)
-    first = int(str_number[0])
+import random
 
-    if str_number.endswith('0'):
-        str_number = str_number.rstrip('0')
+def def_cipher():
+    num = list(range(3, 21))
+    cipher = random.choice(num)
+    return cipher
 
-    if len(str_number) > 1:
-        return first * get_multiplied_digits(int(str_number[1:]))
-    else:
-        return first
+def def_passcode(n):
+    passdict = {}
+    passdict.update({3: 12, 4: 13, 5: 1423, 6: 121524, 7: 162534, 8: 13172635, 9: 1218273645})
+    passdict.update({10: 141923283746, 11: 11029384756, 12: 12131511124210394857, 13: 112211310495867})
+    passdict.update({14: 1611325212343114105968, 15: 1214114232133124115106978})
+    passdict.update({16: 1317115262143531341251161079, 17: 11621531441351261171089})
+    passdict.update({18: 12151811724272163631545414513612711810, 19: 118217316415514613712811910})
+    passdict.update({20: 13141911923282183731746416515614713812911})
+    passcode = passdict.get(n)
+    return passcode
 
-result1 = get_multiplied_digits(402030)
-print(result1)
-result2 = get_multiplied_digits(40203)
-print(result2)
-result3 = get_multiplied_digits(0)
-print(result3)
+n = def_cipher()
+# n = int(input('Введите шифр: '))
+print(f'Число из первого поля: {n}')
+
+pair1 = list(range(1, n))
+pair2 = list(range(1, n))
+pairs = []
+result = ''
+
+for i in pair1:
+    for j in pair2:
+        p1 = i
+        p2 = j
+        if p1 >= p2:
+            continue
+        else:
+            kratno = n % (p1 + p2)
+            if kratno == 0:
+                pairs.append([p1, p2])
+                result = result + str(p1) + str(p2)
+print('Пары чисел', *pairs)
+print(f'Число для второго поля: {result}')
+if int(result) == def_passcode(n):
+    print('Пароль подобран верно.')
+else:
+    print('Пароль подобран неверно.')
