@@ -9,7 +9,7 @@ class House:
     def __str__(self):
         return str(f'Название: "{self.name}", кол-во этажей: {self.number_of_floors}.')
 
-    def __eq__(self, other): # равенсво (x == y)
+    def __eq__(self, other): # равенство (x == y)
         if isinstance(other, House):
             if self.number_of_floors == other.number_of_floors:
                 return True
