@@ -78,14 +78,14 @@ class House:
         else:
             print(f'Нужен аргумент типа "int".')
 
-    def __iadd__(self, value):  #сложение (x += y)
+    def __iadd__(self, value):  # сложение (x += y)
         if isinstance(value, int):
             self.number_of_floors += value
             return self
         else:
             print(f'Нужен аргумент типа "int".')
 
-    def __radd__(self, value): #сложение (x = y + x)
+    def __radd__(self, value): # сложение (x = y + x)
         if isinstance(value, int):
             self.number_of_floors = value + self.number_of_floors
             return self
@@ -93,7 +93,7 @@ class House:
             print(f'Нужен аргумент типа "int".')
 
     def __del__(self):
-        return print(f'{self.name} снесен, но он останется в истории.')
+        print(f'{self.name} снесен, но он останется в истории.')
 
     def go_to(self, new_floor):
         print(f'Кол-во этажей в здании "{self.name}": {self.number_of_floors}.\n'
