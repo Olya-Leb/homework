@@ -110,4 +110,3 @@ h3 = House('ЖК Горский', 9)
 h4 = House('ЖК Умный дом', 20)
 del h1, h2, h3
 print(House.houses_history)
-input()
