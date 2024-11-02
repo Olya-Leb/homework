@@ -12,7 +12,6 @@ class Animal:
     def __init__(self, name):
         self.name = name # имя животного
 
-class Mammal(Animal):
     def eat(self, food): # food - параметр, принимающий объекты классов растений.
         if food.edible:
             print(f'"{self.name}" съел "{food.name}".')
@@ -21,14 +20,11 @@ class Mammal(Animal):
             print(f'"{self.name}" попытался съесть "{food.name}".')
             self.alive = False
 
+class Mammal(Animal):
+    pass
+
 class Predator(Animal):
-    def eat(self, food): # food - параметр, принимающий объекты классов растений.
-        if food.edible:
-            print(f'"{self.name}" съел "{food.name}".')
-            self.fed = True
-        else:
-            print(f'"{self.name}" попытался съесть "{food.name}".')
-            self.alive = False
+    pass
 
 class Plant:
     edible = False # съедобность (да/нет)
