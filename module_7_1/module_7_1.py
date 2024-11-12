@@ -2,6 +2,7 @@ from pprint import pprint # импорт функции "pretty-print", из м�
 
 class Product:
     """Класс описывающий Продукт"""
+    
     def __init__(self, name, weight, category):
         self.name = str(name) # название продукта (строка)
         self.weight = float(weight) # общий вес товара (дробное число) (5.4, 52.8 и т.п.)
