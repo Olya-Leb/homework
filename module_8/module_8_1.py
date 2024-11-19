@@ -1,13 +1,15 @@
-# Домашнее задание "Try и Except"
+# Домашнее задание по теме "Try и Except"
 
 def add_everything_up(a, b):
     try:
-        print(a + b)
+        result = a + b
+        return result
     except TypeError:
-        print(f'{a}{b}')
+        result2 = f'{a}{b}'
+        return result2
 
-add_everything_up(5, '5')
-add_everything_up('5', 0)
-add_everything_up('string', 5.5)
-add_everything_up(5.5, '5')
-add_everything_up('5.5', '5')
+print(add_everything_up(5, '5'))
+print(add_everything_up('5', 0))
+print(add_everything_up('string', 5.5))
+print(add_everything_up(5.5, '5'))
+print(add_everything_up('5.5', '5'))
