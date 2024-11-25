@@ -34,7 +34,6 @@ class Car:
         else:
             raise IncorrectCarNumbers("Некорректный тип данных для номеров")
 
-
 try:
   first = Car('Model1', 1000000, 'f123dj')
 except IncorrectVinNumber as exc:
