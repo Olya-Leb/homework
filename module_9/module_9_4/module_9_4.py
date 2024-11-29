@@ -17,7 +17,7 @@ def get_advanced_writer(file_name):
 write = get_advanced_writer('example.txt')
 write('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
 
-#Метод __call__:
+# Метод __call__:
 class  MysticBall:
 
     def __init__(self, *words):
