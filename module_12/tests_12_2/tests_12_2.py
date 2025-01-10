@@ -2,7 +2,6 @@ import unittest
 from runner_and_tournament import Runner, Tournament
 
 class TournamentTest(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls): # срабатывает 1 раз, перед каждым началом класса
         cls.all_results = {}
@@ -17,25 +16,25 @@ class TournamentTest(unittest.TestCase):
         for result in cls.all_results.values():
             print({place: str(runner) for place, runner in result.items()})
 
-    def test_start1(self): # фикстура № 1
+    def test_first_tournament(self): # фикстура № 1
         t1 = Tournament(90, self.runner1, self.runner3)
         result = t1.start()
         self.all_results[len(self.all_results) + 1] = result
         self.assertTrue(result[max(result.keys())] == "Nick")
 
-    def test_start2(self): # фикстура № 2
+    def test_second_tournament(self): # фикстура № 2
         t2 = Tournament(90, self.runner2, self.runner3)
         result = t2.start()
         self.all_results[len(self.all_results) + 1] = result
         self.assertTrue(result[max(result.keys())] == "Nick")
 
-    def test_start3(self): # фикстура № 3
+    def test_third_tournament(self): # фикстура № 3
         t3 = Tournament(90, self.runner1, self.runner2, self.runner3)
         result = t3.start()
         self.all_results[len(self.all_results) + 1] = result
         self.assertTrue(result[max(result.keys())] == "Nick")
 
-    def test_start4(self): # фикстура № 4
+    def test_fourth_tournament(self): # фикстура № 4
         t4 = Tournament(2, self.runner2, self.runner1, self.runner3)
         result = t4.start()
         self.all_results[len(self.all_results) + 1] = result
