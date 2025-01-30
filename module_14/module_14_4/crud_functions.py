@@ -3,7 +3,6 @@ import sqlite3
 def initiate_db():
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
-
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS Products(
     id INT PRIMARY KEY,
@@ -22,12 +21,10 @@ def initiate_db():
 def get_all_products():
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
-
-    for i in range(1, 5):
-        cursor.execute("SELECT title, description, price FROM Products")
-    all_products = cursor.fetchall()
+    cursor.execute("SELECT * FROM Products")
+    products = cursor.fetchall()
     connection.close()
-    return all_products
+    return products
 
 def main():
     # initiate_db()
