@@ -5,7 +5,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 import asyncio
 from crud_functions import *
 
-api = " "
+api = "7657515087:AAG_ARGejcu5_heVJwzbS89wL5b-j91WkDI"
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -34,11 +34,11 @@ async def start(message):
 
 @dp.message_handler(text="Купить")
 async def get_buying_list(message):
-    for product in get_all_products():
-        for i in range(1, 5):
-            await message.answer(f"Название: {product[0]} | Описание {product[1]} | Цена: {product[2]}")
-            with open(f"files/{i}.png", "rb") as img:
-                await message.answer_photo(img)
+    products = get_all_products()
+    for product in products:
+        await message.answer(f'Название: {product[1]} | Описание: {product[2]} | Цена: {product[3]}')
+        with open(f"files/{product[0]}.png", "rb") as img:
+            await message.answer_photo(img)
     await message.answer("Выберите продукт для покупки:", reply_markup=kb_buy)
 
 @dp.callback_query_handler(text="product_buying")
